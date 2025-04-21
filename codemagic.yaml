@@ -1,3 +1,9 @@
+# 1) Triggers au niveau racine : associez l’événement + la branche + le workflow
+triggers:
+  - event: push
+    branch: main
+    workflow: flutter-workflow
+
 workflows:
   flutter-workflow:
     name: Build Android & iOS
@@ -6,10 +12,7 @@ workflows:
     environment:
       flutter: stable
 
-    # déclencheur automatique sur chaque push
-    triggers:
-      - event: push
-        branch: main
+    # 2) Plus de "triggers" ici
 
     scripts:
       - name: Install dependencies
@@ -29,9 +32,8 @@ workflows:
       - build/ios/ipa/*.ipa
 
     publishing:
-      # si vous avez configuré App Store Connect API
       app_store_connect:
         issuer_id: $APP_STORE_CONNECT_ISSUER_ID
-        key_id: $APP_STORE_CONNECT_KEY_ID
-        api_key: $APP_STORE_CONNECT_PRIVATE_KEY
-        ipa_path: build/ios/ipa/*.ipa
+        key_id:    $APP_STORE_CONNECT_KEY_ID
+        api_key:   $APP_STORE_CONNECT_PRIVATE_KEY
+        # ipa_path supprimé
