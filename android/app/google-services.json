@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "512783549575",
+    "project_id": "projet-test-6fcd1",
+    "storage_bucket": "projet-test-6fcd1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512783549575:android:6bac4b3b2aa39e69b3e422",
+        "android_client_info": {
+          "package_name": "com.powersofttechnology.faris"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc3JeI4QFN90Fx22meuI98TcETm8cZItg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

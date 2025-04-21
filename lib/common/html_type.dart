@@ -1,0 +1,7 @@
+enum HtmlType {
+  TERMS_AND_CONDITION,
+  ABOUT_US,
+  PRIVACY_POLICY,
+  TUTO,
+  FAQ
+}
