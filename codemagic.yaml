@@ -7,10 +7,17 @@ workflows:
       flutter: stable
 
     # plus de step Android
-    scripts:
+      scripts:
       - name: Install dependencies
         script: |
           flutter pub get
+
+      - name: Update CocoaPods repos
+        script: |
+          cd ios
+          pod repo update
+          pod install --repo-update
+          cd ..
 
       - name: Build iOS app
         script: |
