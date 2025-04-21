@@ -1,13 +1,24 @@
+# (Optionnel) déclenchement automatique
+triggers:
+  - event: push
+    branch: main
+    workflow: ios-only
+
 workflows:
   ios-only:
     name: Build iOS only
     max_build_duration: 60
 
+    # ──────────────
+    # Environnement
+    # ──────────────
     environment:
       flutter: stable
 
-    # plus de step Android
-      scripts:
+    # ──────────────
+    # Scripts (mêmes 2 espaces d'indent que `environment`)
+    # ──────────────
+    scripts:
       - name: Install dependencies
         script: |
           flutter pub get
@@ -23,9 +34,15 @@ workflows:
         script: |
           flutter build ios --release --no-codesign
 
+    # ──────────────
+    # Artifacts
+    # ──────────────
     artifacts:
       - build/ios/ipa/*.ipa
 
+    # ──────────────
+    # Publication App Store Connect
+    # ──────────────
     publishing:
       app_store_connect:
         issuer_id: $APP_STORE_CONNECT_ISSUER_ID
